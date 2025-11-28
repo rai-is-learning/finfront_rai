@@ -85,7 +85,7 @@ def slow_endpoint():
 
     try:
         response = requests.get(f"{BACKEND_API_BASE}/api/slow-endpoint")
-        result = response.json()
+        result = response.data()
     except Exception as e:
         result = {"error": str(e)}
 
