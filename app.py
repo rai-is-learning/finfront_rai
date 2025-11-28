@@ -73,7 +73,7 @@ def delete_price():
         instrument_id = request.form['instrument_id']
         try:
             response = requests.delete(f"{BACKEND_API_BASE}/api/delete-price", params={"symbol": instrument_id})
-            result = response.json()
+            result = response.text()
         except Exception as e:
             result = {"error": str(e)}
     return render_template('delete_price.html', result=result)
